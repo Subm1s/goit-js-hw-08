@@ -15,18 +15,16 @@ const player = new Vimeo.Player(iframe);
     });
 
 
-let onPlay = function (data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data.seconds))
-   
-};
 
-player.on('timeupdate', throttle(onPlay, 1000));
+player.on('timeupdate', throttle(data => {
+    localStorage.setItem("videoplayer-current-time", data.seconds)
+}, 1000));
 
 const currentTime = localStorage.getItem(STORAGE_KEY) === null
       ? 0 : localStorage.getItem(STORAGE_KEY);
 
-const parseCurrentTime = JSON.parse(currentTime);
+let parseCurrentTime = JSON.parse(currentTime);
 
 
 
-player.setCurrentTime(parseCurrentTime.seconds);
+player.setCurrentTime(parseCurrentTime);
