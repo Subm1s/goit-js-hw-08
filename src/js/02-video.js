@@ -16,7 +16,7 @@ const player = new Vimeo.Player(iframe);
 
 
 let onPlay = function (data) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data.seconds))
    
 };
 

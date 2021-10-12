@@ -32,6 +32,6 @@ function inputText({ email, password }) {
 
 if (localStorage.getItem(STORAGE_KEY)) {
   const parseObj  = JSON.parse(localStorage.getItem(STORAGE_KEY))
-  inputMail.value = parseObj.email 
-  inputTextarea.value = parseObj.password 
+  inputMail.value = parseObj.email;
+  inputMessage.value = parseObj.password;
 }
