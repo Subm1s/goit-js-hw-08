@@ -17,8 +17,8 @@ inputButton.addEventListener('click', e => {
   localStorage.removeItem(STORAGE_KEY);
   inputNode.reset();
   
-} )
-  
+})
+
 
 function inputText({ email, password }) {
   email = inputMail.value;
